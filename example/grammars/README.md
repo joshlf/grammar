@@ -1,5 +1,5 @@
-pkg/test/grammar/grammars
-=========================
+grammar/example/grammars
+========================
 
 This directory contains a number of sample grammar definitions
 
