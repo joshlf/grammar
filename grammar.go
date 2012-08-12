@@ -1,3 +1,4 @@
+// grammar randomly generates sentences based on a user-supplied context-free grammar.
 package grammar
 
 import (
