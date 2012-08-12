@@ -8,7 +8,7 @@ grammar randomly generates sentences based on a user-supplied context-free gramm
 Format
 ======
 
-The definition consists of a series of newline-separated "rules."  Each rule corresponds to a part of speech, and follows the syntax &lt;part&gt; < definition >.  For example:
+The definition consists of a series of newline-separated "rules."  Each rule corresponds to a part of speech, and follows the syntax &lt;part&gt; &lt;definition&gt;.  For example:
 
 <table>
   <tr>
