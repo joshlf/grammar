@@ -4,7 +4,7 @@ package grammar
 import (
 	"bufio"
 	"errors"
-	"github.com/joshlf13/pkg/errlist"
+	"github.com/joshlf13/errlist"
 	"io"
 	"math/rand"
 	"strings"
