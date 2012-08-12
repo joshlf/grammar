@@ -1,0 +1,4 @@
+NP VP
+Dog Pig
+Verb Run
+Yellow Pink
