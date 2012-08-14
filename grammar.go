@@ -4,6 +4,7 @@ package grammar
 import (
 	"bufio"
 	"errors"
+	"fmt"
 	"github.com/joshlf13/errlist"
 	"io"
 	"math/rand"
@@ -35,12 +36,17 @@ func New(rdr io.Reader) (*Grammar, error) {
 }
 
 // Generate a random sentence based upon the
-// grammar structure of g.
-func (g *Grammar) Speak() string {
+// grammar structure of g, and write it to w
+func (g *Grammar) Speak(w io.Writer) error {
 	if g.initialized {
-		return g.head.mkSelf() + "."
+		err := g.head.speak(w)
+		if err != nil {
+			return err
+		}
+		_, err = w.Write([]byte{'.'})
+		return err
 	}
-	return ""
+	return errors.New("Uninitialized Grammar")
 }
 
 func (g *Grammar) init(rdr io.Reader) error {
@@ -50,13 +56,13 @@ func (g *Grammar) init(rdr io.Reader) error {
 	for {
 		b, ip, err := r.ReadLine()
 		if err != nil {
-			return errors.New("Error reading input: " + err.Error())
+			return fmt.Errorf("Error reading input: %v", err)
 		} else if ip {
 			for ip {
 				var _b []byte
 				_b, ip, err = r.ReadLine()
 				if err != nil {
-					return errors.New("Error reading input: " + err.Error())
+					return fmt.Errorf("Error reading input: %v", err)
 				}
 				b = append(b, _b...)
 			}
@@ -94,14 +100,14 @@ func (g *Grammar) init(rdr io.Reader) error {
 			if err.Error() == "EOF" {
 				break
 			} else {
-				return errors.New("Error reading input: " + err.Error())
+				return fmt.Errorf("Error reading input: %v", err)
 			}
 		} else if ip {
 			for ip {
 				var _b []byte
 				_b, ip, err = r.ReadLine()
 				if err != nil {
-					return errors.New("Error reading input: " + err.Error())
+					return fmt.Errorf("Error reading input: %v", err)
 				}
 				b = append(b, _b...)
 			}
@@ -138,7 +144,7 @@ func (g *Grammar) init(rdr io.Reader) error {
 func (g *Grammar) addRule(prt string, definition []string) error {
 	head, ok := g.parts[prt]
 	if !ok {
-		return errors.New("Unknown part: " + prt)
+		return fmt.Errorf("Unknown part: %v", prt)
 	}
 
 	soln := make([]*part, len(definition))
