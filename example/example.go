@@ -27,6 +27,13 @@ func main() {
 	fmt.Println("Press enter to speak")
 	for {
 		fmt.Scanln()
-		fmt.Println(g.Speak())
+		if err := g.Speak(os.Stdout); err != nil {
+			fmt.Printf("Error writing to stdout: %v\n", err)
+			os.Exit(4)
+		}
+		if _, err := os.Stdout.Write([]byte{'.'}); err != nil {
+			fmt.Printf("Error writing to stdout: %v\n", err)
+			os.Exit(4)
+		}
 	}
 }

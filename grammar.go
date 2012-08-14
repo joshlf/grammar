@@ -39,12 +39,7 @@ func New(rdr io.Reader) (*Grammar, error) {
 // grammar structure of g, and write it to w
 func (g *Grammar) Speak(w io.Writer) error {
 	if g.initialized {
-		err := g.head.speak(w)
-		if err != nil {
-			return err
-		}
-		_, err = w.Write([]byte{'.'})
-		return err
+		return g.head.speak(w)
 	}
 	return errors.New("Uninitialized Grammar")
 }
