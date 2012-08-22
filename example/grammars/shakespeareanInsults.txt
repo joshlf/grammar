@@ -1,0 +1,22 @@
+Thou art adj0 adj1 noun
+adj0 an artless
+adj0 a bawdy
+adj0 a beslubbering
+adj0 a bootless
+adj0 a churlish
+adj0 a cockered
+
+adj1 base-court
+adj1 clay-brained
+adj1 knotty-patted
+adj1 spur-galled
+adj1 tickle-brained
+adj1 unchin-snouted
+
+noun barnacle
+noun boar-pig
+noun clotpole
+noun foot-licker
+noun gudgeon
+noun maggot-pie
+noun skainsmate
