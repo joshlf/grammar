@@ -1,34 +1,44 @@
 NP VP
+
 VP        Verb NP
 NP        Det Noun
 NP        PlurDet PlurNoun
 NP        NP PP
+
 PP        Prep NP
+
 Noun      Adj Noun
+
 Verb      ate
 Verb      washed
 Verb      taught
+
 Noun      sandwich
 Noun      caterpillar
 Noun      bathtub
 Noun      professor
 Noun      dog
+
 PlurNoun  dogs
 PlurNoun  professors
 PlurNoun  sandwiches
+
 Adj       messy
 Adj       boring
 Adj       bubbly
 Adj       flat
 Adj       lazy
 Adj       curious
+
 Prep      with
 Prep      on
 Prep      inside
 Prep      under
 Prep      in
+
 Det       the
 Det       a
 Det       every
+
 PlurDet   some
 PlurDet   most
