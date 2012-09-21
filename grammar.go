@@ -114,9 +114,7 @@ func (g *Grammar) init(rdr io.Reader) error {
 
 		strs := strings.Fields(string(b))
 		length := len(strs)
-		if length < 1 {
-			continue
-		} else if length < 2 {
+		if length < 2 {
 			continue
 		}
 
