@@ -1,7 +1,7 @@
 grammar
 =======
 
-Random sentence generator based on a context-free grammar
+Random sentence generator based on a context-free grammar.
 
 grammar randomly generates sentences based on a user-supplied context-free grammar.
 
