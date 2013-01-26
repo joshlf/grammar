@@ -6,4 +6,4 @@ This test creates a grammar from a definition file, and then prints out sentence
 Use
 ===
 
-To use, remove the "_test.go" extension before running go build (the suffix prevents the "go get" command from installing this example directory)
+To use, remove the "_test.go" extension before building (the suffix prevents the "go get" command from installing this example directory)
