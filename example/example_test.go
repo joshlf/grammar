@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"github.com/joshlf13/grammar"
 	"os"
-	"testing"
 )
 
 func main() {
